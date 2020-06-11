@@ -1,0 +1,3 @@
+aws_keys_suppsmart.pem
+*.pem
+__pycache__/
