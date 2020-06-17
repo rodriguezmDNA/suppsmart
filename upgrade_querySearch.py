@@ -175,8 +175,8 @@ def buildTopicModel(supplement,ngram="tri",nTopics=8,modelType="lda"):
                                                    num_topics=nTopics, 
                                                    random_state=42,
                                                    update_every=1,
-                                                   chunksize=200,
-                                                   passes=30,
+                                                   chunksize=100,
+                                                   passes=20,
                                                    alpha='auto',
                                                    per_word_topics=True)
     else:
@@ -187,7 +187,7 @@ def buildTopicModel(supplement,ngram="tri",nTopics=8,modelType="lda"):
     return ldaMod,id2word,corpus
 
 
-def topicModelSupp(supp,nTopics=8,modelType='lda',ngram='tri'):
+def topicModelSupp(supp,nTopics=8,modelType='lda',ngram='bi'):
     resLDA, resI2W, resCorp = buildTopicModel(supp,ngram,nTopics,modelType)
     # Visualize the topics-keywords
     #pyLDAvis.enable_notebook()
