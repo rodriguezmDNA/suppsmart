@@ -157,7 +157,7 @@ def aggregateCosSims(svd,d2v,topN=-1):
     ### Aggregate
     aggSimTable = pd.merge(d2v, svd, left_index=True, right_index=True)
     aggSimTable.columns = ["Doc2Vec", "BoW"]
-    aggSimTable['aggCosSim'] = (aggSimTable["Doc2Vec"] + aggSimTable["BoW"])/2
+    aggSimTable['similarity'] = (aggSimTable["Doc2Vec"] + aggSimTable["BoW"])/2
     aggSimTable.sort_values(by="aggCosSim", ascending=False, inplace=True)
     return aggSimTable.head(topN)
 

@@ -24,15 +24,15 @@ if st.button("'supp me"):
 	recList, recTable,searchQuery = wrapperSimilarSupplements(query,topN)
 	st.table(recList)
 	#st.pyplot( plotCosinSim(recTable))
-if st.button("Show aggregated cosine similarity"):
+if st.button("Show similarity between query and supplements"):
 	_, recTable,_ = wrapperSimilarSupplements(query,topN)
 	st.bar_chart(recTable['aggCosSim'])
 	
 
-if st.button("similar words"):
-	recList, recTable,searchQuery = wrapperSimilarSupplements(query,topN)
-	st.write(searchQuery)
-	st.pyplot(queryUMAP(searchQuery,doc2vec_model,umap_wordvecs))
+# if st.button("similar words"):
+# 	recList, recTable,searchQuery = wrapperSimilarSupplements(query,topN)
+# 	st.write(searchQuery)
+# 	st.pyplot(queryUMAP(searchQuery,doc2vec_model,umap_wordvecs))
 
 
 
