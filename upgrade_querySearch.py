@@ -5,6 +5,8 @@ import re # regular expressions
 import pandas as pd #data frames
 import numpy as np #math
 from scipy import sparse #sparse matrices
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 ### For lemmatization
 import spacy #Language model
@@ -196,6 +198,23 @@ def topicModelSupp(supp,nTopics=8,modelType='lda',ngram='bi'):
     #return pyLDAvis.display(vis) #no pyplot,
     #return pyLDAvis.prepared_data_to_html(vis) ## no st.write or mdown
 
+
+def hmTopical(topicTuple,topNumber):
+    resTopics = dict([list(reversed(_.split("*"))) for _ in topicTuple.split('+')])
+    resTopics = {k:float(v) for k,v in resTopics.items()}
+    resTopicsDF = pd.DataFrame.from_dict(resTopics,orient='index',columns=[topNumber]) #.reset_index
+    return resTopicsDF
+
+prepDF = lambda resTopics: pd.concat([hmTopical(v,k) for k,v in resTopics.items()],axis=1).T
+
+def makeHM(supp,resTopicsDF):
+    plttitle = "most representative words for " + supp + "\n("+str(resTopicsDF.shape[0]) + " topics)"
+    #fig= plt.figure(figsize=(40,12))
+    return sns.heatmap(resTopicsDF,cmap="Blues",square=True,cbar_kws={"shrink": .5}).set_title(plttitle)
+    #plt.show()
+
+
+
 getSupplementNames = lambda df: list(df.index)
 
 
@@ -210,9 +229,5 @@ loadPickles = {'doc2vec_model': 'doc2vec_model.pkl',
                }
 
 tmpList = loadModelData(loadPickles,verbose=False)
-doc2vec_model,svd_feature_matrix,doctovec_feature_matrix, tfidf_matrix, tf, svd, svdMatrix, scrappedCleanTopic= tmpList
+doc2vec_model,svd_feature_matrix,doctovec_feature_matrix, tfidf_matrix, tf, svd, svdMatrix, scrappedCleanTopic = tmpList
 del tmpList #Stop holding into memory
-
-
-
-
