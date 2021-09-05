@@ -32,7 +32,7 @@ from gensim.models.doc2vec import Doc2Vec, TaggedDocument
 
 ### Dviz
 import pyLDAvis
-import pyLDAvis.gensim 
+import pyLDAvis.gensim_models 
 import matplotlib.pyplot as plt
 
 ##### Define unwanted/stop words
@@ -54,7 +54,8 @@ stop_words=set(stop_words)
 # Some words are actually desired, removing them from the set will keep them in the data.
 stop_words.discard("no")
 
-nlp = spacy.load('en', disable=['parser', 'ner']) 
+nlp = spacy.load("en_core_web_sm")
+#nlp = spacy.load('en', disable=['parser', 'ner']) 
 # Functions for query search
 def cleanQuery(query):
     """
