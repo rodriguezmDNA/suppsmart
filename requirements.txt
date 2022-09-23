@@ -79,7 +79,7 @@ Pillow @ file:///Users/runner/miniforge3/conda-bld/pillow_1630696729270/work
 preshed @ file:///Users/runner/miniforge3/conda-bld/preshed_1625049089411/work
 prometheus-client @ file:///home/conda/feedstock_root/build_artifacts/prometheus_client_1622586138406/work
 prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1629903925368/work
-protobuf==3.16.0
+protobuf==3.18.3
 ptyprocess @ file:///home/conda/feedstock_root/build_artifacts/ptyprocess_1609419310487/work/dist/ptyprocess-0.7.0-py2.py3-none-any.whl
 pyarrow==5.0.0
 pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1593275161868/work
