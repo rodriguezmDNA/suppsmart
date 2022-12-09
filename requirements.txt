@@ -17,7 +17,7 @@ botocore @ file:///home/conda/feedstock_root/build_artifacts/botocore_1630714825
 brotlipy==0.7.0
 cachetools @ file:///home/conda/feedstock_root/build_artifacts/cachetools_1619593780156/work
 catalogue @ file:///Users/runner/miniforge3/conda-bld/catalogue_1629144946233/work
-certifi==2021.5.30
+certifi==2022.12.7
 cffi @ file:///Users/runner/miniforge3/conda-bld/cffi_1625835561163/work
 chardet @ file:///Users/runner/miniforge3/conda-bld/chardet_1610093477312/work
 charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1626371162869/work
